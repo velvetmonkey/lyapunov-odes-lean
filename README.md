@@ -4,6 +4,7 @@
 [![Mathlib](https://img.shields.io/badge/Mathlib-v4.28.0-purple)](https://github.com/leanprover-community/mathlib4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Proofs](https://img.shields.io/badge/proofs-proven%20%2F%200%20sorry-brightgreen)](LyapunovOdes)
+[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.20475912-blue)](https://zenodo.org/records/20475912)
 
 **lyapunov-odes-lean: Formal Proofs of Lyapunov Stability Theorems for Autonomous ODEs in Lean 4**
 
@@ -66,9 +67,9 @@ LyapunovOdes.lean             — Root module
 ## Paper
 
 **lyapunov-odes-lean: Formal Proofs of Lyapunov Stability Theorems for Autonomous ODEs in Lean 4**
-Ben Cassie (2026). *Forthcoming.*
+Ben Cassie (2026). Companion paper: [paper.md](paper.md).
 
-DOI: *forthcoming (Zenodo).*
+DOI: https://doi.org/10.5281/zenodo.20475912
 
 ## Related work
 
