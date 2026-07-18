@@ -1,5 +1,6 @@
 # lyapunov-odes-lean
 
+[![thread](https://img.shields.io/badge/%F0%9F%A7%B5-how%20it%20works-1DA1F2)](https://x.com/thevelvetmonke)
 [![Lean 4](https://img.shields.io/badge/Lean-4.28.0-blue)](https://lean-lang.org/)
 [![Mathlib](https://img.shields.io/badge/Mathlib-v4.28.0-purple)](https://github.com/leanprover-community/mathlib4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -12,7 +13,15 @@ Lean 4 formal proofs of the three classical Lyapunov theorems for autonomous ODE
 
 **Zero sorry statements.** Standard axioms only (`propext`, `Classical.choice`, `Quot.sound`).
 
-## Why it matters
+## What this is, and why it matters
+
+This library formalizes classical Lyapunov arguments for autonomous ODEs on real normed vector spaces. Its headline theorem, `lyapunov_asymptotic_stable`, proves asymptotic stability of the origin from ordinary Lyapunov stability hypotheses, a strictly increasing class-K lower bound on the Lyapunov function, and convergence of that function to zero along nearby trajectories.
+
+The convergence mechanism is cleanly separated. The stability theorem keeps sufficiently small initial conditions inside any requested neighborhood. For attraction, the class-K lower bound squeezes the trajectory norm to zero when the Lyapunov values tend to zero. A separate Gronwall theorem proves exponential decay under an appropriate scalar differential inequality.
+
+The LaSalle step is outside the headline theorem: `V(x(t)) -> 0` is assumed explicitly, not derived from a negative orbital derivative. Solutions are global functions satisfying `HasDerivAt`; the library does not prove existence or uniqueness for a particular vector field. The results also do not automatically provide a state-space exponential rate from the scalar Lyapunov bound.
+
+## Background and motivation
 
 Lyapunov's "direct method" is the foundational tool of stability theory: rather than solving an ODE, you exhibit an energy-like function V that decreases along trajectories and read off the stability of an equilibrium from the behaviour of V alone. It underpins control theory, dynamical systems, and the convergence analysis of optimisation and learning dynamics. This library machine-checks the three theorems at the heart of the method — stability, asymptotic stability, and exponential decay — over a general real normed vector space.
 
